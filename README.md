@@ -1,5 +1,7 @@
 # PPC.js
 
+<img src="./logo.svg"></img>
+
 This library provides **PowerPC CPU emulation in the browser**:
 
 - **PPC CPU (64-bit)** — executes 64-bit PowerPC instructions
