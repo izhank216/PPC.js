@@ -5,9 +5,31 @@
   <title>PPC.js 32-bit CPU tests</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
-    body { padding: 2rem; font-family: "Segoe UI", Tahoma, sans-serif; }
-    pre { background: #f8f9fa; padding: 1rem; border-radius: .5rem; white-space: pre-wrap; }
-    textarea { width: 100%; height: 150px; font-family: monospace; margin-bottom: 1rem; }
+    body { 
+      padding: 2rem; 
+      font-family: "Segoe UI", Tahoma, sans-serif; 
+      background-color: #1e1e1e; 
+      color: #e0e0e0; 
+    }
+    pre { 
+      background: #2d2d2d; 
+      padding: 1rem; 
+      border-radius: .5rem; 
+      white-space: pre-wrap; 
+      color: #e0e0e0;
+      overflow-x: auto;
+    }
+    textarea { 
+      width: 100%; 
+      height: 150px; 
+      font-family: monospace; 
+      margin-bottom: 1rem; 
+      background: #2d2d2d; 
+      color: #e0e0e0; 
+      border: 1px solid #555; 
+      border-radius: .25rem;
+    }
+    button { margin-bottom: 1rem; }
   </style>
 </head>
 <body>
@@ -38,13 +60,17 @@ const runBtn = document.getElementById("run32");
 
 function updateRegisters32() {
   let html = "";
-  Object.entries(cpu32.gpr).forEach(([name,val])=> html += `${name}: ${val.toNumber()}  `);
-  html += `\nPC: ${cpu32.pc.toNumber()}  EFLAGS: ${cpu32.eflags}`;
+  Object.entries(cpu32.gpr).forEach(([name,val])=>{
+    html += `Register: ${name} = ${val.toNumber()}\n`;
+  });
+  html += `PC: ${cpu32.pc.toNumber()}  EFLAGS: ${cpu32.eflags}`;
   regsEl.textContent = html;
 }
 
 function runCPU32() {
   logEl.textContent = "";
+  regsEl.textContent = "";
+  
   const memory = new PPC.Memory(1024*1024);
   window.cpu32 = new PPC.CPUx86();
   cpu32.memory = memory;
@@ -73,7 +99,6 @@ function runCPU32() {
 }
 
 runBtn.onclick = runCPU32;
-runCPU32();
 </script>
 
 </body>
