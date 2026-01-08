@@ -17,9 +17,6 @@ console.log(
   ""
 );
 
-
-
-
 module.exports = {
   CPU,
   CPUx86,
