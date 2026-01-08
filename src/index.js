@@ -10,7 +10,9 @@ console.log(
 |  \\/||  \\/||  /       | ||    \\
 |  __/|  __/|  \\____/\\_| |\\___ |
 \\_/   \\_/   \\____/\\/\\____/\\____/
+
 %c The PowerPC CPU emulation library for the browser.
+
 %cSee the GitHub repository at https://github.com/izhank216/PPC.js/`,
   "color: red; font-weight: bold;",
   "font-style: italic;",
