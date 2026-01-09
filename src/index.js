@@ -2,6 +2,7 @@ const { CPU } = require("./cpu")
 const { Memory } = require("./memory")
 const { PCI } = require("./pci")
 const { FakeBIOS } = require("./fakeBIOS")
+const isaConfig = require("./isaconfig")
 const { CPUx86 } = require("./x86")
 
 console.log(
@@ -25,5 +26,6 @@ module.exports = {
   Memory,
   PCI,
   FakeBIOS,
+  isaConfig,
   Buffer: require("buffer").Buffer
 }
